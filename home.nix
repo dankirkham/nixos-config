@@ -4,6 +4,7 @@
     ./modules/cli.nix
     ./modules/coding.nix
     ./modules/dotfiles.nix
+    ./modules/firefox.nix
     ./modules/media.nix
     ./modules/netsec.nix
     ./modules/personal.nix
