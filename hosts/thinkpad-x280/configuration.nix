@@ -57,6 +57,12 @@
   #   pulse.enable = true;
   # };
 
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+    package = pkgs.callPackage ./overrides/bluez.nix {};
+  };
+
   users.users.dan = {
     isNormalUser = true;
     extraGroups = [ "wheel" "dialout" ]; # Enable ‘sudo’ for the user.

@@ -10,8 +10,7 @@
     nixosConfigurations.dan-nixos-thinkpad-x280 = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
         modules = [
-          ./configuration.nix
-          # (import ./overlay.nix)
+          ./hosts/thinkpad-x280/configuration.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
