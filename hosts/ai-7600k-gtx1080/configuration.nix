@@ -15,7 +15,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "dan-nixos-thinkpad-x280"; # Define your hostname.
+  networking.hostName = "ai-7600k-gtx1080"; # Define your hostname.
 
   # Pick only one of the below networking options.
   networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -57,12 +57,6 @@
   #   pulse.enable = true;
   # };
 
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
-    package = pkgs.callPackage ../../overrides/bluez.nix {};
-  };
-
   users.users.dan = {
     isNormalUser = true;
     extraGroups = [ "wheel" "dialout" ]; # Enable ‘sudo’ for the user.
@@ -79,21 +73,6 @@
     vim
   ];
 
-  # OOM configuration:
-  systemd = {
-    # Create a separate slice for nix-daemon that is
-    # memory-managed by the userspace systemd-oomd killer
-    slices."nix-daemon".sliceConfig = {
-      ManagedOOMMemoryPressure = "kill";
-      ManagedOOMMemoryPressureLimit = "50%";
-    };
-    services."nix-daemon".serviceConfig.Slice = "nix-daemon.slice";
-
-    # If a kernel-level OOM event does occur anyway,
-    # strongly prefer killing nix-daemon child processes
-    services."nix-daemon".serviceConfig.OOMScoreAdjust = 1000;
-  };
-
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -105,7 +84,7 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
