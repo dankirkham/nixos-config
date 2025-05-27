@@ -5,6 +5,7 @@
       bat
       btop
       curl
+      dnsutils
       eza
       fd
       fzf
