@@ -11,6 +11,12 @@
 
   services.openssh.enable = true;
 
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "nvidia-x11"
+    "nvidia-settings"
+    "nvidia-persistenced"
+  ];
+
   hardware.nvidia = {
     modesetting.enable = true;
     powerManagement.enable = false;
