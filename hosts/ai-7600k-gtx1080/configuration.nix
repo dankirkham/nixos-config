@@ -32,6 +32,15 @@
 
   services.openssh.enable = true;
 
+  users.users.dan = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" ];
+    packages = with pkgs; [
+    ];
+    shell = pkgs.bash;
+    home = "/home/dan";
+  };
+
   # This option defines the first version of NixOS you have installed on this
   # particular machine, and is used to maintain compatibility with application
   # data (e.g. databases) created on older NixOS versions. Most users should
