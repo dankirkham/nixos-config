@@ -3,7 +3,6 @@
   imports = [
     ./cli.nix
     ./coding.nix
-    ./default.nix
     ./dotfiles.nix
     ./firefox.nix
     ./media.nix
