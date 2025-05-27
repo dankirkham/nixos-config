@@ -9,36 +9,27 @@
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {
     nixosConfigurations.thinkpad-x280 = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      modules = [
-        ./hosts/thinkpad-x280/configuration.nix
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.dan = ./home;
-        }
-      ];
+        modules = [
+          ./hosts/thinkpad-x280/configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.dan = ./home;
+          }
+        ];
     };
-    nixosConfigurations.ai-7600k-gtx1080 = let
-      pkgs = import nixpkgs {
-        system = "x86_64-linux";
-        config = {
-          allowUnfree = true;
-          allowUnfreePredicate = _: true;
-        };
-      };
-    in nixpkgs.lib.nixosSystem {
+    nixosConfigurations.ai-7600k-gtx1080 = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      specialArgs = inputs // { pkgs = pkgs; };
-      modules = [
-        ./hosts/ai-7600k-gtx1080/configuration.nix
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.dan = ./home;
-        }
-      ];
+        modules = [
+          ./hosts/ai-7600k-gtx1080/configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.dan = ./home;
+          }
+        ];
     };
   };
 }
