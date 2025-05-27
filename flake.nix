@@ -15,7 +15,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.dan = ./home.nix;
+            home-manager.users.dan = ./home;
           }
         ];
     };
@@ -27,7 +27,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.dan = ./home.nix;
+            home-manager.users.dan = ./home;
           }
         ];
     };

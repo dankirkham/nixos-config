@@ -1,14 +1,15 @@
 { config, pkgs, ... }:
 {
   imports = [
-    ./modules/cli.nix
-    ./modules/coding.nix
-    ./modules/dotfiles.nix
-    ./modules/firefox.nix
-    ./modules/media.nix
-    ./modules/netsec.nix
-    ./modules/personal.nix
-    ./modules/radio.nix
+    ./cli.nix
+    ./coding.nix
+    ./default.nix
+    ./dotfiles.nix
+    ./firefox.nix
+    ./media.nix
+    ./netsec.nix
+    ./personal.nix
+    #./radio.nix
   ];
 
   home.username = "dan";
@@ -22,5 +23,4 @@
     userName = "Dan Kirkham";
     userEmail = "daniel.a.kirkham@gmail.com";
   };
-  
 }
