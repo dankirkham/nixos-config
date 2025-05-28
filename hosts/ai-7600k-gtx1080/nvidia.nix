@@ -3,6 +3,7 @@
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "cuda-merged"
     "cuda_cccl"
+    "cuda_cudart"
     "cuda_cuobjdump"
     "cuda_gdb"
     "cuda_nvcc"
