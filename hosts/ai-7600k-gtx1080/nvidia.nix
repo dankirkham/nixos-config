@@ -4,6 +4,7 @@
     "cuda-merged"
     "cuda_cuobjdump"
     "cuda_gdb"
+    "cuda_nvcc"
     "cudatoolkit"
     "nvidia-x11"
     "nvidia-settings"
