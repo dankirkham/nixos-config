@@ -10,6 +10,7 @@
     "cuda_gdb"
     "cuda_nvcc"
     "cuda_nvdisasm"
+    "cuda_nvml_dev"
     "cuda_nvprune"
     "nvidia-persistenced"
     "nvidia-settings"
