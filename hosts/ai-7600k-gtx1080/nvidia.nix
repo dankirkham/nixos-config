@@ -47,11 +47,12 @@
   environment.systemPackages = with pkgs; [
     cudatoolkit
     (libtorch-bin.overrideAttrs (old: { cudaSupport = true; }))
-    # linuxPackages.nvidia_x11
+    linuxPackages.nvidia_x11
   ];
 
   environment.variables = {
     CUDA_PATH = pkgs.cudatoolkit;
     # EXTRA_LDFLAGS = "-L/lib -L${pkgs.linuxPackages.nvidia_x11}/lib";
+    LD_LIBRARY_PATH="/usr/lib/wsl/lib:${pkgs.linuxPackages.nvidia_x11}/lib:${pkgs.ncurses5}/lib";
   };
 }
