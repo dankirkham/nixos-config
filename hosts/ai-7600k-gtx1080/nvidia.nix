@@ -6,6 +6,7 @@
     "cuda_cudart"
     "cuda_cuobjdump"
     "cuda_cupti"
+    "cuda_cuxxfilt"
     "cuda_gdb"
     "cuda_nvcc"
     "cuda_nvdisasm"
