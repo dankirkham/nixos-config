@@ -34,6 +34,7 @@
   services.xserver.videoDrivers = ["nvidia"];
 
   hardware.graphics.enable = true;
+  hardware.opengl.enable = true;
   hardware.nvidia = {
     modesetting.enable = true;
     powerManagement.enable = false;
@@ -46,11 +47,11 @@
   environment.systemPackages = with pkgs; [
     cudatoolkit
     (libtorch-bin.overrideAttrs (old: { cudaSupport = true; }))
-    linuxPackages.nvidia_x11
+    # linuxPackages.nvidia_x11
   ];
 
   environment.variables = {
     CUDA_PATH = pkgs.cudatoolkit;
-    EXTRA_LDFLAGS = "-L/lib -L${pkgs.linuxPackages.nvidia_x11}/lib";
+    # EXTRA_LDFLAGS = "-L/lib -L${pkgs.linuxPackages.nvidia_x11}/lib";
   };
 }
