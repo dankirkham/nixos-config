@@ -30,7 +30,6 @@
     "nvidia-settings"
     "nvidia-x11"
   ];
-  nixpkgs.config.cudaSupport = true;
 
   services.xserver.videoDrivers = ["nvidia"];
 
@@ -46,6 +45,8 @@
 
   environment.systemPackages = with pkgs; [
     cudatoolkit
-    libtorch-bin
+    libtorch-bin.override {
+      cudaSupport = true;
+    }
   ];
 }
