@@ -24,6 +24,7 @@
     "libcusolver"
     "libcusparse"
     "libnpp"
+    "libnvjitlink"
 
     "nvidia-persistenced"
     "nvidia-settings"
