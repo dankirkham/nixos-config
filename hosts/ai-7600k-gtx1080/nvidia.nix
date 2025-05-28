@@ -46,5 +46,6 @@
 
   environment.systemPackages = with pkgs; [
     cudatoolkit
+    libtorch-bin
   ];
 }
