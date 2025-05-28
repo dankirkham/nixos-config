@@ -7,7 +7,7 @@
     "nvidia-settings"
     "nvidia-persistenced"
   ];
-  nixpkgs.nvidia.acceptLicense = true;
+  nixpkgs.config.nvidia.acceptLicense = true;
 
   services.xserver.videoDrivers = ["nvidia"];
 
