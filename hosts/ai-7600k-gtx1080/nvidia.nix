@@ -45,6 +45,6 @@
 
   environment.systemPackages = with pkgs; [
     cudatoolkit
-    libtorch-bin.overrideAttrs (old: { cudaSupport = true; })
+    libtorch-bin.overrideAttrs (old: rec { cudaSupport = true; })
   ];
 }

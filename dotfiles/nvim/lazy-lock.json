@@ -1,6 +1,6 @@
 {
   "coc.nvim": { "branch": "release", "commit": "4bf93f031261b7a7cdff38aaac7a12b564e2f00c" },
-  "fzf-lua": { "branch": "main", "commit": "1de2dbf00506701b072c1e502dd1bc52227ced45" },
+  "fzf-lua": { "branch": "main", "commit": "758173f499d15410ecb50c5519a41b27c33e645d" },
   "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
   "lualine.nvim": { "branch": "master", "commit": "0c6cca9f2c63dadeb9225c45bc92bb95a151d4af" },
   "nvim-lspconfig": { "branch": "master", "commit": "b8e7957bde4cbb3cb25a13a62548f7c273b026e9" },
