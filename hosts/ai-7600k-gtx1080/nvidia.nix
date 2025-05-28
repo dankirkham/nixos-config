@@ -18,6 +18,13 @@
     "cuda_profiler_api"
     "cuda_sanitizer_api"
 
+    "libcublas"
+    "libcufft"
+    "libcurand"
+    "libcusolver"
+    "libcusparse"
+    "libnpp"
+
     "nvidia-persistenced"
     "nvidia-settings"
     "nvidia-x11"
