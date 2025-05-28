@@ -5,10 +5,10 @@
     "cuda_cuobjdump"
     "cuda_gdb"
     "cuda_nvcc"
-    "cudatoolkit"
-    "nvidia-x11"
-    "nvidia-settings"
+    "cuda_nvdisasm"
     "nvidia-persistenced"
+    "nvidia-settings"
+    "nvidia-x11"
   ];
   # nixpkgs.config.nvidia.acceptLicense = true;
 
