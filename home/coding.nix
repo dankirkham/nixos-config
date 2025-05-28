@@ -4,9 +4,10 @@
     home.packages = with pkgs; [
       # tools
       alacritty
-      neovim
-      zellij
       delta
+      neovim
+      tmux
+      zellij
 
       # langs
       nodejs_24
@@ -16,6 +17,8 @@
       cargo-expand
       cargo-info
       bacon
+      gcc
+      cmake
     ];
   };
 }
