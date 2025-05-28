@@ -2,13 +2,13 @@
 {
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "cuda-merged"
-    "cuda-cuobjdump"
+    "cuda_cuobjdump"
     "cudatoolkit"
     "nvidia-x11"
     "nvidia-settings"
     "nvidia-persistenced"
   ];
-  nixpkgs.config.nvidia.acceptLicense = true;
+  # nixpkgs.config.nvidia.acceptLicense = true;
 
   services.xserver.videoDrivers = ["nvidia"];
 
