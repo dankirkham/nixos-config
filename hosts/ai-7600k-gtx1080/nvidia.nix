@@ -2,6 +2,7 @@
 {
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "cuda-merged"
+    "cuda-cuobjdump"
     "cudatoolkit"
     "nvidia-x11"
     "nvidia-settings"
