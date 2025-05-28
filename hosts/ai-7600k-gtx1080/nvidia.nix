@@ -45,8 +45,8 @@
 
   environment.systemPackages = with pkgs; [
     cudatoolkit
-    libtorch-bin.override {
+    (callPackage libtorch-bin.override {
       cudaSupport = true;
-    }
+    } {})
   ];
 }
