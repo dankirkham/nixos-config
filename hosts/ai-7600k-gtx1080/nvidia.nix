@@ -47,4 +47,8 @@
     cudatoolkit
     (libtorch-bin.overrideAttrs (old: { cudaSupport = true; }))
   ];
+
+  environment.variables = {
+    CUDA_PATH = pkgs.cudatoolkit;
+  };
 }
