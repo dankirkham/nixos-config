@@ -13,7 +13,8 @@
       nodejs_24
       rustup
       python313
-      conda
+      python313Packages.conda
+      python313Packages.pip
 
       # language tools
       cargo-expand
