@@ -14,7 +14,7 @@ builtins.getAttr version {
     x86_64-linux-cuda = {
       name = "libtorch-cxx11-abi-shared-with-deps-2.7.0-cu128.zip";
       url = "https://download.pytorch.org/libtorch/cu128/libtorch-cxx11-abi-shared-with-deps-2.7.0%2Bcu128.zip";
-      hash = "sha256-UaX47GAwyZ6UmzgY85TeAHmy3u52pBHhiyM5NAz7ens=";
+      hash = "sha256-2dc6GRbmSK00y3Q+7zsdtn9ep10M303Nc5VeEYd4Rcc=";
     };
   };
 }
