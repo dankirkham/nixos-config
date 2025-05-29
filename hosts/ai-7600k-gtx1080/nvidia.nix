@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 let
-    libtorch-bin-27 = pkgs.callPackage ../../overrides/libtorch-bin.nix {};
+    libtorch-bin-27 = pkgs.callPackage ../../overrides/libtorch-bin.nix { cudaSupport = true; };
 in {
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "cuda-merged"
@@ -48,7 +48,8 @@ in {
 
   environment.systemPackages = with pkgs; [
     cudatoolkit
-    (libtorch-bin-27.overrideAttrs (old: { cudaSupport = true; }))
+    # (libtorch-bin-27.overrideAttrs (old: { cudaSupport = true; }))
+    libtorch-bin-27
     linuxPackages.nvidia_x11
   ];
 
