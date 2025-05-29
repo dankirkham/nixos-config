@@ -36,7 +36,6 @@ in {
   services.xserver.videoDrivers = ["nvidia"];
 
   hardware.graphics.enable = true;
-  hardware.opengl.enable = true;
   hardware.nvidia = {
     modesetting.enable = true;
     powerManagement.enable = false;
@@ -50,7 +49,7 @@ in {
     cudatoolkit
     # (libtorch-bin-27.overrideAttrs (old: { cudaSupport = true; }))
     libtorch-bin-27
-    linuxPackages.nvidia_x11
+    # linuxPackages.nvidia_x11
   ];
 
   environment.variables = {
