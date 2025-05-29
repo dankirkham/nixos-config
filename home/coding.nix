@@ -12,11 +12,12 @@
       # langs
       nodejs_24
       rustup
-      python313
-      python313Packages.conda
-      python313Packages.pip
-      python313Packages.scipy
-      python313Packages.numpy
+      python310
+      # python313
+      # python313Packages.conda
+      # python313Packages.pip
+      # python313Packages.scipy
+      # python313Packages.numpy
 
       # language tools
       cargo-expand
