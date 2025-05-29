@@ -9,7 +9,7 @@ builtins.getAttr version {
     x86_64-linux-cpu = {
       name = "libtorch-cxx11-abi-shared-with-deps-2.7.0-cpu.zip";
       url = "https://download.pytorch.org/libtorch/cpu/libtorch-cxx11-abi-shared-with-deps-2.7.0%2Bcpu.zip";
-      hash = "sha256-gUzPhc4Z8rTPhIm89pPoLP0Ww17ono+/xgMW46E/Tro=";
+      hash = "sha256-8REMU+E0DZQDRUw1zx0K5oMqVsTBJ8g88dqnLpUfcjM=";
     };
     x86_64-linux-cuda = {
       name = "libtorch-cxx11-abi-shared-with-deps-2.7.0-cu128.zip";
