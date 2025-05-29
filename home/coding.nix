@@ -15,7 +15,8 @@
       python313
       python313Packages.conda
       python313Packages.pip
-      python313Packages.ninja
+      python313Packages.scipy
+      python313Packages.numpy
 
       # language tools
       cargo-expand
