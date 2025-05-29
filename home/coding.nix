@@ -12,6 +12,8 @@
       # langs
       nodejs_24
       rustup
+      python313
+      conda
 
       # language tools
       cargo-expand
