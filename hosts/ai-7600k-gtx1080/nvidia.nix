@@ -56,5 +56,7 @@
     LD_LIBRARY_PATH="${pkgs.cudatoolkit}/lib64:${pkgs.cudatoolkit}/lib:$LD_LIBRARY_PATH";
     # LD_LIBRARY_PATH="/usr/lib/wsl/lib:${pkgs.linuxPackages.nvidia_x11}/lib:${pkgs.ncurses5}/lib";
     LIBTORCH = pkgs.libtorch-bin;
+    LIBTORCH_LIB = pkgs.libtorch-bin;
+    LIBTORCH_INCLUDE = pkgs.libtorch-bin.dev;
   };
 }
