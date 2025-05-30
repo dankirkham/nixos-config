@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   config = {
     home.packages = with pkgs; [
@@ -12,12 +12,8 @@
       # langs
       nodejs_24
       rustup
-      python310
-      # python313
-      # python313Packages.conda
-      # python313Packages.pip
-      # python313Packages.scipy
-      # python313Packages.numpy
+      python313
+      python313Packages.pip
 
       # language tools
       cargo-expand
@@ -25,6 +21,12 @@
       bacon
       gcc
       cmake
+      ruff
+      uv
+
+      # language servers
+      nixd
+      luau-lsp
     ];
   };
 }

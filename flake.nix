@@ -6,7 +6,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
+  outputs = { nixpkgs, home-manager, ... }: {
     nixosConfigurations.thinkpad-x280 = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
         modules = [

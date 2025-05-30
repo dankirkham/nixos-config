@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 {
   imports = [
     ./cli.nix
@@ -8,7 +8,7 @@
     ./media.nix
     ./netsec.nix
     ./personal.nix
-    #./radio.nix
+    ./radio.nix
   ];
 
   home.username = "dan";
