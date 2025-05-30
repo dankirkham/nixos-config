@@ -1,17 +1,17 @@
-{ pkgs, config, ... }:
+{ pkgs, lib, ... }:
 with lib; {
-  options = {
-    dan.radio = {
-      enable = mkOption {
-        type = types.bool;
-        default = false;
-        description = "Enable radio packages";
-      };
-    };
-  };
+  # options = {
+  #   dan.radio = {
+  #     enable = mkOption {
+  #       type = types.bool;
+  #       default = false;
+  #       description = "Enable radio packages";
+  #     };
+  #   };
+  # };
 
-{
-  config = mkIf config.dan.radio.enable {
+  # config = mkIf config.dan.radio.enable {
+  config = {
     home.packages = with pkgs; [
       chirp
       direwolf

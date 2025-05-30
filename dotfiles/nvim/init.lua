@@ -34,7 +34,7 @@ vim.opt.updatetime=300
 
 vim.g.mapleader = " "
 
-vim.cmd.colorscheme('slate')
+vim.cmd.colorscheme('everforest')
 
 vim.keymap.set('n', '<leader>\\', ':vsp<CR>')
 vim.keymap.set('n', '<leader>h', ':wincmd h<CR>')

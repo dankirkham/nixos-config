@@ -3,10 +3,18 @@ return {
     "neovim/nvim-lspconfig",
     -- event = "LazyFile",
     opts = {
+      diagnostics = {
+        update_in_insert = false,
+        virtual_text = {
+          spacing = 4,
+          source = "if_many",
+          prefix = "●",
+        },
+      },
       servers = {
         ruff = {},
         rust_analyzer = {},
-        luau_lsp = {},
+        lua_ls = {},
         nixd = {},
       },
       inlay_hints = {
@@ -21,6 +29,9 @@ return {
       for server, server_opts in pairs(opts.servers) do
         setup(server)
       end
+
+
+      vim.diagnostic.config(vim.deepcopy(opts.diagnostics))
     end,
   },
 }

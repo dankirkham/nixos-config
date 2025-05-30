@@ -26,7 +26,7 @@
 
       # language servers
       nixd
-      luau-lsp
+      lua-language-server
     ];
   };
 }
