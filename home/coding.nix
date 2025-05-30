@@ -4,6 +4,7 @@
     home.packages = with pkgs; [
       # tools
       alacritty
+      wezterm
       delta
       neovim
       tmux
