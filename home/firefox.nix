@@ -80,6 +80,11 @@
             install_url = "https://addons.mozilla.org/firefox/downloads/file/4493940/bitwarden_password_manager-2025.5.0.xpi";
             installation_mode = "force_installed";
           };
+          # Old Reddit Redirect
+          "{9063c2e9-e07c-4c2c-9646-cfe7ca8d0498}" = {
+            install_url = "https://addons.mozilla.org/firefox/downloads/file/4472856/old_reddit_redirect-2.0.5.xpi";
+            installation_mode = "force_installed";
+          };
         };
 
         /* ---- PREFERENCES ---- */
