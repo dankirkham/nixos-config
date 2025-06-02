@@ -1,5 +1,5 @@
-{ ... }:
-
+{ config, lib, ... }:
+with lib;
   let
     lock-false = {
       Value = false;
@@ -11,7 +11,7 @@
     };
   in
 {
-  programs = {
+  programs = mkIf config.dan.gui.enable {
     firefox = {
       enable = true;
       languagePacks = [ "en-US" ];

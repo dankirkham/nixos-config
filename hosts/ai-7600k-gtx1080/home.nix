@@ -15,5 +15,14 @@
     userName = "Dan Kirkham";
     userEmail = "daniel.a.kirkham@gmail.com";
   };
+
+  dan = {
+    coding.enable = true;
+    gui.enable = false;
+    media.enable = false;
+    netsec.enable = false;
+    personal.enable = false;
+    radio.enable = false;
+  };
 }
 

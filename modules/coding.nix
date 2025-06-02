@@ -1,9 +1,18 @@
-{ pkgs, ... }:
-{
-  config = {
+{ config, lib, pkgs, ... }:
+with lib; {
+  options = {
+    dan.coding = {
+      enable = mkOption {
+        type = types.bool;
+        default = false;
+        description = "Enable coding packages";
+      };
+    };
+  };
+
+  config = mkIf config.dan.coding.enable {
     home.packages = with pkgs; [
       # tools
-      wezterm
       delta
       neovim
       tmux
@@ -27,6 +36,8 @@
       # language servers
       nixd
       lua-language-server
+    ] ++ lib.optionals config.dan.gui.enable [
+      wezterm
     ];
   };
 }

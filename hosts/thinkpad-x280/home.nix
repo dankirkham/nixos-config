@@ -17,6 +17,11 @@
   };
 
   dan = {
-    radio.enable = false;
+    coding.enable = true;
+    gui.enable = true;
+    media.enable = true;
+    netsec.enable = true;
+    personal.enable = true;
+    radio.enable = true;
   };
 }
