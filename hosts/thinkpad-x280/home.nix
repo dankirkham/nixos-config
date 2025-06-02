@@ -1,14 +1,7 @@
 { ... }:
 {
   imports = [
-    ./cli.nix
-    ./coding.nix
-    ./dotfiles.nix
-    ./firefox.nix
-    ./media.nix
-    ./netsec.nix
-    ./personal.nix
-    ./radio.nix
+    ../../modules
   ];
 
   home.username = "dan";
@@ -21,5 +14,9 @@
     enable = true;
     userName = "Dan Kirkham";
     userEmail = "daniel.a.kirkham@gmail.com";
+  };
+
+  dan = {
+    radio.enable = false;
   };
 }

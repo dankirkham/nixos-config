@@ -28,7 +28,5 @@
     powerOnBoot = true;
     package = pkgs.callPackage ../../overrides/bluez.nix {};
   };
-
-  programs.firefox.enable = true;
 }
 

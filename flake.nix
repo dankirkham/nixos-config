@@ -15,7 +15,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.dan = ./home;
+            home-manager.users.dan = ./hosts/thinkpad-x280/home.nix;
           }
         ];
     };
@@ -27,7 +27,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.dan = ./home;
+            home-manager.users.dan = ./hosts/ai-7600k-gtx1080/home.nix;
           }
         ];
     };
