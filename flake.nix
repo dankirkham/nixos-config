@@ -43,6 +43,7 @@
       system = "aarch64-linux";
       modules = [
         raspberry-pi-nix.nixosModules.raspberry-pi
+        raspberry-pi-nix.nixosModules.sd-image
         ./hosts/mmdvm-hotspot/configuration.nix
         home-manager.nixosModules.home-manager
         {
