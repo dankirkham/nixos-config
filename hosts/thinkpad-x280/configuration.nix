@@ -18,6 +18,10 @@
 
   services.xserver.xkb.layout = "us";
   services.xserver.xkb.options = "caps:escape";
+
+  # for intel graphics
+  services.xserver.videoDrivers = [ "modesetting" ];
+
   services.libinput.touchpad.naturalScrolling = true;
 
   # needed for yubikey OTP

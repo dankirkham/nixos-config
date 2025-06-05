@@ -15,10 +15,10 @@ with lib; {
       yubioath-flutter
     ] ++ lib.optionals config.dan.gui.enable [
       anki-bin
-      libreoffice-qt
-      inkscape
       gimp
-      workrave
+      inkscape
+      libreoffice-qt
+      rsibreak
     ];
   };
 }
