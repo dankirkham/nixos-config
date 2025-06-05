@@ -18,6 +18,7 @@ with lib; {
       libreoffice-qt
       inkscape
       gimp
+      workrave
     ];
   };
 }
