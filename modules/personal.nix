@@ -14,6 +14,7 @@ with lib; {
     home.packages = with pkgs; [
       yubioath-flutter
     ] ++ lib.optionals config.dan.gui.enable [
+      anki-bin
       libreoffice-qt
       inkscape
       gimp

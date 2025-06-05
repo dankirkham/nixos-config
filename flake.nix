@@ -15,7 +15,7 @@
     # nixos-raspberrypi.url = "github:nvmd/nixos-raspberrypi";
   };
 
-  outputs = { nixpkgs, home-manager, nixos-raspberrypi, ... }@inputs: {
+  outputs = { nixpkgs, home-manager, ... }@inputs: {
     nixosConfigurations.thinkpad-x280 = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
