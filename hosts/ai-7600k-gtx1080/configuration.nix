@@ -11,5 +11,8 @@
   services.xserver.enable = false;
 
   services.openssh.enable = true;
+
+  # cross compile tools for rpi
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 }
 
