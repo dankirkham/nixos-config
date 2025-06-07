@@ -20,6 +20,7 @@
   services.xserver.xkb.options = "caps:escape";
 
   # for intel graphics
+  hardware.graphics.enable = true;
   services.xserver.videoDrivers = [ "modesetting" ];
 
   services.libinput.touchpad.naturalScrolling = true;
