@@ -19,6 +19,7 @@ with lib; {
       inkscape
       libreoffice-qt
       rsibreak
+      signal-desktop
     ];
   };
 }
