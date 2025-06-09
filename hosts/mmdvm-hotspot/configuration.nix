@@ -5,6 +5,7 @@
     nixos-raspberrypi.nixosModules.usb-gadget-ethernet
     ../../shared/configuration.nix
     ./hardware-configuration.nix
+    ../../modules/mmdvm-host.nix
   ];
 
   system.nixos.tags = let
@@ -18,7 +19,12 @@
   networking.hostName = "mmdvm-hotspot";
 
   services.xserver.enable = false;
-
   services.openssh.enable = true;
+  services.mmdvm_host = {
+    enable = true;
+    user = "dan";
+    group = "dan";
+    config-file = "/home/dan/.config/mmdvm/config.ini";
+  };
 }
 

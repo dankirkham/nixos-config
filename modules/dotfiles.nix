@@ -4,6 +4,7 @@ let
   configPath = "${home}/.config";
   dotfilesPath = "/etc/nixos/dotfiles";
   programs = [
+    "mmdvm"
     "nvim"
     "tmux"
     "wezterm"

@@ -96,17 +96,6 @@ in
       };
     };
 
-    systemd.services.mmdvm_host_restart = {
-      wantedBy = [ "multi-user.target" ];
-      description = "MMDVMHost restart service";
-      serviceConfig = {
-        Type = "oneshot";
-      };
-      script = ''
-        ${pkgs.systemd}/bin/systemctl restart "mmdvm_host.service"
-      '';
-    };
-
     systemd.services.dmr_id_update = {
       wants = [ "network.target" ];
       after = [ "network.target" ];
