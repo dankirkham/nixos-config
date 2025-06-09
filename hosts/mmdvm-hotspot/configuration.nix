@@ -1,8 +1,8 @@
 { config, nixos-raspberrypi, ... }:
 {
   imports = [
-    nixos-raspberrypi.nixosModules.raspberry-pi-5.base
-    nixos-raspberrypi.nixosModules.raspberry-pi-5.display-vc4
+    nixos-raspberrypi.nixosModules.raspberry-pi-4.base
+    nixos-raspberrypi.nixosModules.usb-gadget-ethernet
     ../../shared/configuration.nix
   ];
 
