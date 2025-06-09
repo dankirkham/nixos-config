@@ -1,0 +1,11 @@
+diff --git a/M17Utils.cpp b/M17Utils.cpp
+index 4462c9b..a65ca13 100644
+--- a/M17Utils.cpp
++++ b/M17Utils.cpp
+@@ -20,6 +20,7 @@
+ #include "M17Defines.h"
+ 
+ #include <cassert>
++#include <cstdint>
+ 
+ const std::string M17_CHARS = " ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-/.";

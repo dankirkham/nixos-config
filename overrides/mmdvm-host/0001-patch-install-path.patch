@@ -1,0 +1,16 @@
+diff --git a/Makefile b/Makefile
+index bac0711..0e17fc4 100644
+--- a/Makefile
++++ b/Makefile
+@@ -30,8 +30,9 @@ RemoteCommand:	Log.o RemoteCommand.o UDPSocket.o
+ 
+ .PHONY install:
+ install: all
+-		install -m 755 MMDVMHost /usr/local/bin/
+-		install -m 755 RemoteCommand /usr/local/bin/
++		mkdir -p ${out}/bin
++		install -m 755 MMDVMHost ${out}/bin/
++		install -m 755 RemoteCommand ${out}/bin/
+ 
+ .PHONY install-service:
+ install-service: install /etc/MMDVM.ini

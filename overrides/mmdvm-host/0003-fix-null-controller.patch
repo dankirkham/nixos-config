@@ -1,0 +1,22 @@
+diff --git a/NullController.cpp b/NullController.cpp
+index edfeffe..598b783 100644
+--- a/NullController.cpp
++++ b/NullController.cpp
+@@ -20,6 +20,7 @@
+ 
+ #include <cstdio>
+ #include <cassert>
++#include <cstdint>
+ 
+ const unsigned char MMDVM_FRAME_START = 0xE0U;
+ 
+@@ -120,7 +121,8 @@ void CNullController::writeVersion()
+ 	::memset(reply + 7U, 0x00U, 16U);
+ 
+ 	uint8_t count = 23U;
+-	for (uint8_t i = 0U; HARDWARE[i] != 0x00U; i++, count++)
++	uint8_t i = 0;
++	for (i = 0U; HARDWARE[i] != 0x00U; i++, count++)
+ 		reply[count] = HARDWARE[i];
+ 
+ 	reply[1U] = count;
