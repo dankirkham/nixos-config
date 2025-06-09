@@ -4,6 +4,7 @@
     nixos-raspberrypi.nixosModules.raspberry-pi-4.base
     nixos-raspberrypi.nixosModules.usb-gadget-ethernet
     ../../shared/configuration.nix
+    ./hardware-configuration.nix
   ];
 
   system.nixos.tags = let
