@@ -24,4 +24,10 @@
     personal.enable = false;
     radio.enable = false;
   };
+
+  services.mmdvm_host = {
+    user = "dan";
+    group = "dan";
+    config-file = "/home/dan/.config/mmdvm-host/config.ini";
+  };
 }

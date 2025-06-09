@@ -1,4 +1,4 @@
-{ config, nixos-raspberrypi, pkgs, ... }:
+{ config, nixos-raspberrypi, ... }:
 {
   imports = [
     nixos-raspberrypi.nixosModules.raspberry-pi-4.base
@@ -20,9 +20,5 @@
   services.xserver.enable = false;
 
   services.openssh.enable = true;
-
-  environment.systemPackages = [
-    (pkgs.callPackage ../../overrides/mmdvm-firmware.nix {})
-  ];
 }
 

@@ -16,6 +16,7 @@ with lib; {
     ./dotfiles.nix
     ./firefox.nix
     ./media.nix
+    ./mmdvm-host.nix
     ./netsec.nix
     ./personal.nix
     ./radio.nix
