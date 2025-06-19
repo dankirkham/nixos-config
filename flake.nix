@@ -16,6 +16,8 @@
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     nixos-raspberrypi.url = "github:nvmd/nixos-raspberrypi/main";
+    # nixos-raspberrypi.url = "github:nvmd/nixos-raspberrypi/usable-kernelboot-gens";
+    # nixos-raspberrypi.url = "github:dankirkham/nixos-raspberrypi/main";
   };
 
   outputs = { nixpkgs, home-manager, nixos-raspberrypi, ... }@inputs: {
