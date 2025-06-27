@@ -12,16 +12,25 @@
   };
 
   inputs = {
+    agenix.url = "github:ryantm/agenix";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     nixos-raspberrypi.url = "github:nvmd/nixos-raspberrypi/main";
   };
 
-  outputs = { nixpkgs, home-manager, nixos-raspberrypi, ... }@inputs: {
+  outputs = {
+   nixpkgs,
+   home-manager,
+   nixos-raspberrypi,
+   agenix,
+   ...
+ }@inputs: {
     nixosConfigurations.thinkpad-x280 = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
+      specialArgs = inputs;
       modules = [
+        agenix.nixosModules.default
         ./hosts/thinkpad-x280/configuration.nix
         home-manager.nixosModules.home-manager
         {
@@ -33,7 +42,9 @@
     };
     nixosConfigurations.ai-7600k-gtx1080 = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
+      specialArgs = inputs;
       modules = [
+        agenix.nixosModules.default
         ./hosts/ai-7600k-gtx1080/configuration.nix
         home-manager.nixosModules.home-manager
         {
@@ -46,6 +57,7 @@
     nixosConfigurations.mmdvm-hotspot = nixos-raspberrypi.lib.nixosSystem {
       specialArgs = inputs;
       modules = [
+        agenix.nixosModules.default
         ./hosts/mmdvm-hotspot/configuration.nix
         home-manager.nixosModules.home-manager
         {

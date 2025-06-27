@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ agenix, pkgs, ... }:
 {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -22,10 +22,13 @@
 
   environment.variables.EDITOR = "nvim";
   environment.systemPackages = with pkgs; [
+    agenix.packages.${pkgs.system}.default
     vim
   ];
 
   # Don't change this to update packages!
   system.stateVersion = "24.11";
+
+  age.secrets.identity.file = ../secrets/identity.age;
 }
 

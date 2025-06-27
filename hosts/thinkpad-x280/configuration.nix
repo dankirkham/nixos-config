@@ -19,6 +19,8 @@
   services.xserver.xkb.layout = "us";
   services.xserver.xkb.options = "caps:escape";
 
+  services.openssh.enable = true;
+
   # for intel graphics
   hardware.graphics.enable = true;
   # 32-bit for wine
