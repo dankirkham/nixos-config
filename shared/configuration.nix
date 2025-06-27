@@ -23,6 +23,7 @@
   environment.variables.EDITOR = "nvim";
   environment.systemPackages = with pkgs; [
     agenix.packages.${pkgs.system}.default
+    age-plugin-yubikey
     vim
   ];
 

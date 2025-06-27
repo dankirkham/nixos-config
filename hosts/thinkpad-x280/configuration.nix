@@ -16,6 +16,8 @@
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
 
+  services.openssh.enable = true;
+
   services.xserver.xkb.layout = "us";
   services.xserver.xkb.options = "caps:escape";
 

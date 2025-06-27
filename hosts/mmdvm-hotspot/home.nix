@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, config, ... }:
 {
   imports = [
     ../../modules
@@ -13,7 +13,7 @@
   programs.git = {
     enable = true;
     userName = "Dan Kirkham";
-    userEmail = "daniel.a.kirkham@gmail.com";
+    userEmail = lib.strings.trim (builtins.readFile "/run/agenix/email");
   };
 
   dan = {
