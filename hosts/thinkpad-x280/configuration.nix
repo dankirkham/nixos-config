@@ -21,6 +21,8 @@
 
   # for intel graphics
   hardware.graphics.enable = true;
+  # 32-bit for wine
+  hardware.graphics.enable32Bit = true;
   services.xserver.videoDrivers = [ "modesetting" ];
 
   services.libinput.touchpad.naturalScrolling = true;
