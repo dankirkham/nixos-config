@@ -29,6 +29,10 @@
   # Don't change this to update packages!
   system.stateVersion = "24.11";
 
-  age.secrets.identity.file = ../secrets/identity.age;
+  age.secrets.email = {
+    file = ../secrets/email.age;
+    owner = "dan";
+    mode = "0400";
+  };
 }
 
