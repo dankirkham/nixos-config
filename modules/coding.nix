@@ -43,10 +43,15 @@ with lib; {
     home.file.".config/nvim" = {
       source = ../dotfiles/nvim;
       recursive = true;
+      force = true;
     };
-    home.file.".config/tmux".source = ../dotfiles/tmux;
+    home.file.".config/tmux" = {
+      source = ../dotfiles/tmux;
+      force = true;
+    };
     home.file.".config/wezterm" = lib.mkIf config.dan.gui.enable {
       source = ../dotfiles/wezterm;
+      force = true;
     };
   };
 }
