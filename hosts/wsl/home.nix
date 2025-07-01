@@ -11,7 +11,7 @@
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
-    nixgl.default
+    nixgl.auto.nixGLDefault
   ];
 
   programs.git = {
