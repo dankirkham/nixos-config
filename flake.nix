@@ -62,8 +62,6 @@
       modules = [
         ./hosts/wsl/configuration.nix
       ];
-      username = "dan";
-      homeDirectory = "/home/dan";
     };
   };
 }
