@@ -39,5 +39,14 @@ with lib; {
     ] ++ lib.optionals config.dan.gui.enable [
       wezterm
     ];
+
+    home.file.".config/nvim" = {
+      source = ../dotfiles/nvim;
+      recursive = true;
+    };
+    home.file.".config/tmux".source = ../dotfiles/tmux;
+    home.file.".config/wezterm" = lib.mkIf config.dan.gui.enable {
+      source = ../dotfiles/wezterm;
+    };
   };
 }
