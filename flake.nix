@@ -60,7 +60,7 @@
         system = "x86_64-linux";
       };
       modules = [
-        ./hosts/wsl/configuration.nix
+        ./hosts/wsl/home.nix
       ];
     };
   };
