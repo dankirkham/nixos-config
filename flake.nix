@@ -16,9 +16,10 @@
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     nixos-raspberrypi.url = "github:nvmd/nixos-raspberrypi/main";
+    nixgl.url = "github:nix-community/nixGL";
   };
 
-  outputs = { nixpkgs, home-manager, nixos-raspberrypi, ... }@inputs: {
+  outputs = { nixpkgs, home-manager, nixos-raspberrypi, nixgl, ... }@inputs: {
     nixosConfigurations.thinkpad-x280 = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
@@ -58,6 +59,7 @@
     homeConfigurations.dan = home-manager.lib.homeManagerConfiguration {
       pkgs = import nixpkgs {
         system = "x86_64-linux";
+        overlays = [ nixgl.overlay ];
       };
       modules = [
         ./hosts/wsl/home.nix

@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   imports = [
     ../../modules
@@ -10,6 +10,10 @@
 
   programs.home-manager.enable = true;
 
+  home.packages = with pkgs; [
+    nixgl.default
+  ];
+
   programs.git = {
     enable = true;
     userName = "Dan Kirkham";
@@ -18,7 +22,7 @@
 
   dan = {
     coding.enable = true;
-    gui.enable = false;
+    gui.enable = true;
     media.enable = false;
     netsec.enable = false;
     personal.enable = true;

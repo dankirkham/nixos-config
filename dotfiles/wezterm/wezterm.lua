@@ -3,7 +3,7 @@ local config = wezterm.config_builder()
 
 config.audible_bell = 'Disabled'
 config.color_scheme = 'Everforest Dark (Gogh)'
-config.enable_tab_bar = false
+config.enable_tab_bar = true
 config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
 config.window_close_confirmation = 'NeverPrompt'
 config.window_padding = {
