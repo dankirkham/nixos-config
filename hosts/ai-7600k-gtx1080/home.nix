@@ -16,9 +16,11 @@
     userEmail = "daniel.a.kirkham@gmail.com";
   };
 
+  programs.steam.enable = true;
+
   dan = {
     coding.enable = true;
-    gui.enable = false;
+    gui.enable = true;
     media.enable = false;
     netsec.enable = false;
     personal.enable = false;
