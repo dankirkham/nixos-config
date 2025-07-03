@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ config, lib, ... }:
 {
   imports = [
     ./hardware-configuration.nix
@@ -16,7 +16,7 @@
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
   programs.steam.enable = true;
-  allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "steam"
   ];
 }
