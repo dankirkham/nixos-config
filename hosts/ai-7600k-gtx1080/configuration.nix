@@ -18,5 +18,6 @@
   programs.steam.enable = true;
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "steam"
+    "nvidia-x11-575.51.02-6.12.30"
   ];
 }
