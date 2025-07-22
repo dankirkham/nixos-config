@@ -30,6 +30,10 @@
   # needed for yubikey OTP
   services.pcscd.enable = true;
 
+  environment.systemPackages = with pkgs; [
+    callPackage ../../overrides/linuxtrack.nix {}
+  ];
+
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;

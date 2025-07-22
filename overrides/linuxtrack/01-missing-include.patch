@@ -1,0 +1,12 @@
+diff --git a/src/ltr_srv_master.cpp b/src/ltr_srv_master.cpp
+index 25ead2d..d048863 100644
+--- a/src/ltr_srv_master.cpp
++++ b/src/ltr_srv_master.cpp
+@@ -20,6 +20,7 @@
+
+ #include <map>
+ #include <string>
++#include <pthread.h>
+
+ static std::multimap<std::string, int> slaves;
+ static semaphore_p pfSem = NULL;
