@@ -16,6 +16,7 @@ with lib; {
       direwolf
       dsdcc
       xastir
+      libiio
     ] ++ lib.optionals config.dan.gui.enable [
       fldigi
       gnuradio
@@ -27,6 +28,7 @@ with lib; {
       qsstv
       sdrangel
       sdrpp
+      urh
       wsjtx
       xnec2c
     ];
