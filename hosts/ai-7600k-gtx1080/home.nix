@@ -18,7 +18,7 @@
 
   dan = {
     coding.enable = true;
-    gui.enable = true;
+    gui.enable = false;
     media.enable = false;
     netsec.enable = false;
     personal.enable = false;
