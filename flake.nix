@@ -26,13 +26,14 @@
    nixos-raspberrypi,
    nixgl,
    agenix,
+   ...
  }: {
     nixosConfigurations.thinkpad-x280 = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = inputs;
       modules = [
-        agenix.nixosModules.default
         ./hosts/thinkpad-x280/configuration.nix
+        agenix.nixosModules.default
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
@@ -45,8 +46,8 @@
       system = "x86_64-linux";
       specialArgs = inputs;
       modules = [
-        agenix.nixosModules.default
         ./hosts/ai-7600k-gtx1080/configuration.nix
+        agenix.nixosModules.default
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
@@ -58,8 +59,8 @@
     nixosConfigurations.mmdvm-hotspot = nixos-raspberrypi.lib.nixosSystem {
       specialArgs = inputs;
       modules = [
-        agenix.nixosModules.default
         ./hosts/mmdvm-hotspot/configuration.nix
+        agenix.nixosModules.default
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
@@ -71,11 +72,11 @@
     homeConfigurations.dan = home-manager.lib.homeManagerConfiguration {
       pkgs = import nixpkgs {
         system = "x86_64-linux";
-        overlays = [ nixgl.overlay ];
-      };
-      modules = [
-        ./hosts/wsl/home.nix
-      ];
+          overlays = [ nixgl.overlay ];
+        };
+        modules = [
+          ./hosts/wsl/home.nix
+        ];
     };
   };
 }

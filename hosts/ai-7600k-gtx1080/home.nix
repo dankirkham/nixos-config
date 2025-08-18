@@ -22,7 +22,7 @@
   programs.git = {
     enable = true;
     userName = "Dan Kirkham";
-    userEmail = lib.strings.trim (builtins.readFile "/run/agenix/email");
+    userEmail = "daniel.a.kirkham@gmail.com";
   };
 }
 

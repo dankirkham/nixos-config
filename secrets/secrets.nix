@@ -1,5 +1,5 @@
 let
-  main = "age1yubikey1qd3jk3uu69ghu090nrdlvcjfza90fgul8fsh6j2whmywx90mw4j4vmyjpry";
+  main = "age1yubikey1qfxtwh9rmp8qm0er3hgdwe06jlxexknehag7lrjmv6zx45y80yd3xj20mg0";
   yubikeys = [ main ];
 
   dan = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILnjvflqEEYV3112bAqMnbXoHDrbPjNXnNveW2a8cdNf dan@dan-nixos-thinkpad-x280";
