@@ -37,7 +37,7 @@
     configuration = host: {
       name = host.name;
       value = host.pkgs.lib.nixosSystem {
-        system = host.system;
+        system = host.system || null;
         specialArgs = inputs;
         modules = [
           ./hosts/${host.name}/configuration.nix
