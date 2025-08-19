@@ -37,7 +37,7 @@
     configuration = host: {
       name = host.name;
       value = host.pkgs.lib.nixosSystem {
-        system = host.system ? null;
+        system = if builtins.hasAttr "system" host then host.system else null;
         specialArgs = inputs;
         modules = [
           ./hosts/${host.name}/configuration.nix
