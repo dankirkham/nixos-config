@@ -11,5 +11,5 @@ let
 
 in
 {
-  "email.age".publicKeys = yubikeys ++ users ++ systems;
+  "mmdvm-config.age".publicKeys = yubikeys ++ users ++ systems;
 }
