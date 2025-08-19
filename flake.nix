@@ -27,56 +27,42 @@
    nixgl,
    agenix,
    ...
- }: {
-    nixosConfigurations.thinkpad-x280 = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = inputs;
-      modules = [
-        ./hosts/thinkpad-x280/configuration.nix
-        agenix.nixosModules.default
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.dan = ./hosts/thinkpad-x280/home.nix;
-        }
-      ];
+ }:
+  let
+    hosts = [
+      { name = "ai-7600k-gtx1080"; pkgs = nixpkgs; system = "x86_64-linux"; }
+      { name = "mmdvm-hotspot"; pkgs = nixos-raspberrypi; }
+      { name = "thinkpad-x280"; pkgs = nixpkgs; system = "x86_64-linux"; }
+    ];
+    configuration = host: {
+      name = host.name;
+      value = host.pkgs.lib.nixosSystem {
+        system = host.system;
+        specialArgs = inputs;
+        modules = [
+          ./hosts/${host.name}/configuration.nix
+          agenix.nixosModules.default
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.dan = ./hosts/${host.name}/home.nix;
+          }
+        ];
+      };
     };
-    nixosConfigurations.ai-7600k-gtx1080 = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = inputs;
-      modules = [
-        ./hosts/ai-7600k-gtx1080/configuration.nix
-        agenix.nixosModules.default
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.dan = ./hosts/ai-7600k-gtx1080/home.nix;
-        }
-      ];
-    };
-    nixosConfigurations.mmdvm-hotspot = nixos-raspberrypi.lib.nixosSystem {
-      specialArgs = inputs;
-      modules = [
-        ./hosts/mmdvm-hotspot/configuration.nix
-        agenix.nixosModules.default
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.dan = ./hosts/mmdvm-hotspot/home.nix;
-        }
-      ];
-    };
+    configurations = builtins.listToAttrs (map configuration hosts);
+
+  in {
+    nixosConfigurations = configurations;
     homeConfigurations.dan = home-manager.lib.homeManagerConfiguration {
       pkgs = import nixpkgs {
         system = "x86_64-linux";
-          overlays = [ nixgl.overlay ];
-        };
-        modules = [
-          ./hosts/wsl/home.nix
-        ];
+        overlays = [ nixgl.overlay ];
+      };
+      modules = [
+        ./hosts/wsl/home.nix
+      ];
     };
   };
 }
