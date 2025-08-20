@@ -12,12 +12,12 @@ in
     enable = mkEnableOption "MMDVMHost service";
 
     host_package = mkOption {
-      default = (pkgs.callPackage ../overrides/mmdvm-firmware.nix {});
+      default = (pkgs.callPackage ../overrides/mmdvm-host/default.nix {});
       type = types.package;
     };
 
     firmware_package = mkOption {
-      default = (pkgs.callPackage ../overrides/mmdvm-host/default.nix {});
+      default = (pkgs.callPackage ../overrides/mmdvm-firmware.nix {});
       type = types.package;
     };
 
@@ -55,6 +55,7 @@ in
 
     systemd.tmpfiles.rules = [
       "d '/var/lib/mmdvm' 0750 ${cfg.user} ${cfg.group} - -"
+      "d '/var/log/mmdvm' 0750 ${cfg.user} ${cfg.group} - -"
     ];
 
     systemd.services.mmdvm_host = {
@@ -73,14 +74,6 @@ in
       script = ''
         if [ ! -e /var/lib/mmdvm/DMRIds.dat ]; then
           touch /var/lib/mmdvm/DMRIds.dat
-        fi
-
-        if [ ! -e /var/lib/mmdvm/firmware-version ]; then
-          touch /var/lib/mmdvm/firmware-version
-        fi
-        if [ "${cfg.firmware_package}" != "$(cat /var/lib/mmdvm/firmware-version)" ]; then
-          ${pkgs.stm32flash}/bin/stm32flash -w ${cfg.firmware_package}/firmware/mmdvm_f4.bin -i ',-dtr,-rts,dtr,,:-dtr,rts,dtr' ${cfg.usb-tty}
-          echo "${cfg.firmware_package}" > /var/lib/mmdvm/firmware-version
         fi
 
         exec ${cfg.host_package}/bin/MMDVMHost ${cfg.config-file}
