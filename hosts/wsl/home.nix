@@ -4,24 +4,13 @@
     ../../modules
   ];
 
-  home.username = "dan";
-  home.homeDirectory = "/home/dan";
-  home.stateVersion = "25.05";
-
-  programs.home-manager.enable = true;
-
   home.packages = with pkgs; [
     nixgl.auto.nixGLDefault
   ];
 
-  programs.git = {
-    enable = true;
-    userName = "Dan Kirkham";
-    userEmail = "daniel.a.kirkham@gmail.com";
-  };
-
   dan = {
     coding.enable = true;
+    firefox.enable = true;
     gui.enable = true;
     media.enable = false;
     netsec.enable = false;

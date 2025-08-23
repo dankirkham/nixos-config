@@ -10,7 +10,7 @@ with lib; {
     };
   };
 
-  config = {
+  config = mkIf config.dan.personal.enable {
     home.packages = with pkgs; [
       yubioath-flutter
     ] ++ lib.optionals config.dan.gui.enable [

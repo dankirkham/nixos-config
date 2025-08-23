@@ -18,5 +18,6 @@ with lib; {
     ./netsec.nix
     ./personal.nix
     ./radio.nix
+    ./user.nix
   ];
 }

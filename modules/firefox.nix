@@ -11,7 +11,17 @@ with lib;
     };
   in
 {
-  programs = mkIf config.dan.gui.enable {
+  options = {
+    dan.firefox = {
+      enable = mkOption {
+        type = types.bool;
+        default = false;
+        description = "Enable firefox";
+      };
+    };
+  };
+
+  config.programs = mkIf config.dan.firefox.enable {
     firefox = {
       enable = true;
       languagePacks = [ "en-US" ];

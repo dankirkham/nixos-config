@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ config, pkgs, lib, ... }:
 with lib; {
   options = {
     dan.media = {
@@ -9,7 +9,8 @@ with lib; {
       };
     };
   };
-  config = {
+
+  config = mkIf config.dan.media.enable {
     home.packages = with pkgs; [
       ncspot
     ];
