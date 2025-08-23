@@ -14,6 +14,19 @@
   # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
   networking.hostName = "ai-7600k-gtx1080";
 
+  services.avahi = {
+      enable = true;
+      nssmdns = true;
+      publish = {
+        enable = true;
+        addresses = true;
+        domain = true;
+        hinfo = true;
+        userServices = true;
+        workstation = true;
+      };
+  };
+
   services.xserver.enable = false;
 
   services.openssh.enable = true;
