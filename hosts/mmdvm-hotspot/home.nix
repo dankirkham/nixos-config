@@ -1,7 +1,7 @@
 { lib, ... }:
 {
   imports = [
-    ../../modules
+    ../../modules/home-manager
   ];
 
   dan = {
