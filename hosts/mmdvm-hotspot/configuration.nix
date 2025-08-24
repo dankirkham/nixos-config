@@ -19,6 +19,17 @@
 
   networking.hostName = "mmdvm-hotspot";
 
+  services.avahi = {
+      enable = true;
+      nssmdns4 = true;
+      publish = {
+        enable = true;
+        addresses = true;
+        domain = true;
+        workstation = true;
+      };
+  };
+
   boot.loader.systemd-boot.enable = false;
 
   system.nixos.tags = let

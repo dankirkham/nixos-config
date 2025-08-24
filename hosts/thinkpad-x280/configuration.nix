@@ -13,6 +13,17 @@
   # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
   networking.hostName = "thinkpad-x280"; # Define your hostname.
 
+  services.avahi = {
+      enable = true;
+      nssmdns4 = true;
+      publish = {
+        enable = true;
+        addresses = true;
+        domain = true;
+        workstation = true;
+      };
+  };
+
   services.xserver.enable = true;
   # services.xserver.windowManager.xmonad = {
   #   enable = true;
