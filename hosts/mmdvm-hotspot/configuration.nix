@@ -4,7 +4,7 @@
     ./hardware-configuration.nix
     nixos-raspberrypi.nixosModules.raspberry-pi-4.base
     ../../shared/configuration.nix
-    ../../modules/mmdvm-host.nix
+    ../../modules/nixos/mmdvm-host.nix
   ];
 
   users.users.dan.extraGroups = [
