@@ -12,12 +12,12 @@ in
     enable = mkEnableOption "MMDVMHost service";
 
     host_package = mkOption {
-      default = (pkgs.callPackage ../overrides/mmdvm-host/default.nix {});
+      default = (pkgs.callPackage ../../overrides/mmdvm-host/default.nix {});
       type = types.package;
     };
 
     firmware_package = mkOption {
-      default = (pkgs.callPackage ../overrides/mmdvm-firmware.nix {});
+      default = (pkgs.callPackage ../../overrides/mmdvm-firmware.nix {});
       type = types.package;
     };
 
