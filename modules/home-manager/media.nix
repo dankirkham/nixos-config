@@ -13,6 +13,8 @@ with lib; {
   config = mkIf config.dan.media.enable {
     home.packages = with pkgs; [
       ncspot
+    ] ++ lib.optionals config.dan.gui.enable [
+      vlc
     ];
   };
 }
