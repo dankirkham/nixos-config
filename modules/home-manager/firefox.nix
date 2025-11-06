@@ -65,14 +65,15 @@ with lib;
         };
 
         /* ---- EXTENSIONS ---- */
-        # Check about:support for extension/add-on ID strings.
+        # Check about:support for extension/add-on ID strings. (or search for "guid" in page source}
         # Valid strings for installation_mode are "allowed", "blocked",
         # "force_installed" and "normal_installed".
         ExtensionSettings = {
           "*".installation_mode = "blocked"; # blocks all addons except the ones specified below
           # uBlock Origin:
           "uBlock0@raymondhill.net" = {
-            install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
+            # install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
+            install_url = "https://addons.mozilla.org/firefox/downloads/file/4598854/ublock_origin-1.67.0.xpi";
             installation_mode = "force_installed";
           };
           # Privacy Badger:
@@ -93,6 +94,16 @@ with lib;
           # Old Reddit Redirect
           "{9063c2e9-e07c-4c2c-9646-cfe7ca8d0498}" = {
             install_url = "https://addons.mozilla.org/firefox/downloads/file/4472856/old_reddit_redirect-2.0.5.xpi";
+            installation_mode = "force_installed";
+          };
+          # Sponsor block
+          "sponsorBlocker@ajay.app" = {
+            install_url = "https://addons.mozilla.org/firefox/downloads/file/4608179/sponsorblock-6.1.0.xpi";
+            installation_mode = "force_installed";
+          };
+          # Hide Youtube shorts
+          "{88ebde3a-4581-4c6b-8019-2a05a9e3e938}" = {
+            install_url = "https://addons.mozilla.org/firefox/downloads/file/4579182/hide_youtube_shorts-1.8.8.xpi";
             installation_mode = "force_installed";
           };
         };
