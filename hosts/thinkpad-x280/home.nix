@@ -12,5 +12,6 @@
     netsec.enable = true;
     personal.enable = true;
     radio.enable = true;
+    games.enable = true;
   };
 }
