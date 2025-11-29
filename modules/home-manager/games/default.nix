@@ -6,6 +6,12 @@ let
   battlehawks1942 = pkgs.callPackage ./battlehawks1942.nix { inherit mkDosGame; };
   their-finest-hour = pkgs.callPackage ./their-finest-hour.nix { inherit mkDosGame fetch7z; };
   swotl = pkgs.callPackage ./swotl.nix { inherit mkDosGame fetch7z; };
+
+  dosgames = [
+      battlehawks1942
+      their-finest-hour
+      swotl
+  ];
 in
 {
   options = {
@@ -20,10 +26,12 @@ in
 
   config = mkIf config.dan.personal.enable {
     home.packages = [
-    ] ++ lib.optionals config.dan.gui.enable [
-      battlehawks1942
-      their-finest-hour
-      swotl
-    ];
+    ] ++ lib.optionals config.dan.gui.enable ([
+      pkgs.endless-sky
+      pkgs.luanti-client
+      pkgs.openttd
+      pkgs.superTuxKart
+      pkgs.zeroad
+    ] ++ dosgames);
   };
 }
