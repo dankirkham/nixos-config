@@ -1,5 +1,8 @@
 { lib, pkgs, config, ... }:
-with lib; {
+with lib;
+let
+  sane-break = (pkgs.callPackage ../../overrides/sane-break.nix {});
+in {
   options = {
     dan.personal = {
       enable = mkOption {
@@ -20,6 +23,7 @@ with lib; {
       libreoffice-qt
       rsibreak
       signal-desktop
+      sane-break
     ];
   };
 }
