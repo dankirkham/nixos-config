@@ -18,12 +18,14 @@ in {
       yubioath-flutter
     ] ++ lib.optionals config.dan.gui.enable [
       anki-bin
+      calibre
       gimp
       inkscape
+      josm
       libreoffice-qt
       rsibreak
-      signal-desktop
       sane-break
+      signal-desktop
     ];
   };
 }
