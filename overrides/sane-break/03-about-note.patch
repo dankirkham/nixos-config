@@ -1,0 +1,16 @@
+diff --git a/src/app/pref-window.ui b/src/app/pref-window.ui
+index 885a9d7..7c439cd 100644
+--- a/src/app/pref-window.ui
++++ b/src/app/pref-window.ui
+@@ -2114,7 +2114,8 @@ v%1
+ &lt;/div&gt;
+ &lt;p&gt;Remind breaks without mindless skips. &lt;/p&gt;
+ &lt;p&gt;2024-2026, &lt;a href=&quot;https://github.com/AllanChain/sane-break/&quot;&gt;Sane Break developers&lt;/a&gt; (&lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.en.html&quot;&gt;GPL 3.0&lt;/a&gt;)
+-&lt;/p&gt;</string>
++&lt;/p&gt;
++&lt;p style=&quot;color: #888;&quot;&gt;Custom build: single monitor, no fullscreen&lt;/p&gt;</string>
+                  </property>
+                  <property name="textFormat">
+                   <enum>Qt::TextFormat::RichText</enum>
+
+

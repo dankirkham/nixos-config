@@ -1,0 +1,25 @@
+diff --git a/src/app/break-window.cpp b/src/app/break-window.cpp
+index dad6ea2..7b0522f 100644
+--- a/src/app/break-window.cpp
++++ b/src/app/break-window.cpp
+@@ -214,22 +214,6 @@ void BreakWindow::showFullScreen() {
+   if (m_data.show.endTime) ui->breakEndTimeLabel->setVisible(true);
+   if (m_data.show.buttons) ui->buttons->setVisible(true);
+
+-  QPropertyAnimation* resizeAnim =
+-      new QPropertyAnimation(m_waylandWorkaround ? mainWidget : this, "geometry");
+-  resizeAnim->setStartValue(m_waylandWorkaround ? mainWidget->geometry() : geometry());
+-  resizeAnim->setEndValue(m_waylandWorkaround ? screen()->availableGeometry()
+-                                              : screen()->geometry());
+-  resizeAnim->setDuration(300);
+-  resizeAnim->start();
+-
+-  if (m_bgImageLabel) {
+-    m_bgImageLabel->show();
+-    auto* fadeIn = new QPropertyAnimation(m_bgImageOpacity, "opacity");
+-    fadeIn->setStartValue(0.0);
+-    fadeIn->setEndValue(1.0);
+-    fadeIn->setDuration(800);
+-    fadeIn->start(QPropertyAnimation::DeleteWhenStopped);
+-  }
+ }

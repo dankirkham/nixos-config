@@ -1,0 +1,13 @@
+diff --git a/src/app/break-windows.cpp b/src/app/break-windows.cpp
+index b7626c7..d091a70 100644
+--- a/src/app/break-windows.cpp
++++ b/src/app/break-windows.cpp
+@@ -125,7 +125,7 @@ BreakWindowData BreakWindows::createData(BreakType type, SanePreferences* prefer
+   }
+ }
+ void BreakWindows::create(BreakWindowData data) {
+-  QList<QScreen*> screens = QApplication::screens();
++  QList<QScreen*> screens = {QApplication::primaryScreen()};
+   for (QScreen* screen : std::as_const(screens)) {
+     BreakWindow* w = new BreakWindow(data);
+     m_windows.append(w);

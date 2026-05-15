@@ -1,7 +1,7 @@
 { lib, pkgs, config, ... }:
 with lib;
 let
-  sane-break = (pkgs.callPackage ../../overrides/sane-break.nix {});
+  sane-break = (pkgs.callPackage ../../overrides/sane-break/default.nix {});
 in {
   options = {
     dan.personal = {
