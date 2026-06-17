@@ -11,7 +11,12 @@
   programs.git = {
     enable = true;
     lfs.enable = true;
-    userName = "Dan Kirkham";
-    userEmail = "daniel.a.kirkham@gmail.com";
+    settings = {
+      user = {
+        name = "Dan Kirkham";
+        email = "daniel.a.kirkham@gmail.com";
+      };
+      init.defaultBranch = "main";
+    };
   };
 }

@@ -14,8 +14,8 @@
   inputs = {
     agenix.url = "github:ryantm/agenix";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    home-manager.url = "github:nix-community/home-manager/release-25.05";
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    home-manager.url = "github:nix-community/home-manager/release-26.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
     nixos-raspberrypi.url = "github:nvmd/nixos-raspberrypi/main";
     nixgl.url = "github:nix-community/nixGL";
   };

@@ -20,7 +20,7 @@ with lib; {
     ] ++ lib.optionals config.dan.gui.enable [
       fldigi
       gnuradio
-      gpredict-unstable
+      gpredict
       gqrx
       gridtracker
       inspectrum

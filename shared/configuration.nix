@@ -6,7 +6,7 @@
 
   users.users.dan = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "dialout" ];
+    extraGroups = [ "wheel" "dialout" "plugdev" ];
     packages = with pkgs; [
     ];
     shell = pkgs.bash;

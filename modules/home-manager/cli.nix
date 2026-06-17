@@ -12,7 +12,7 @@
       htop
       jq
       killall
-      neofetch
+      fastfetch
       pciutils
       ripgrep
       tree
