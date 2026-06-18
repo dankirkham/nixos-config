@@ -30,7 +30,7 @@ in
       pkgs.endless-sky
       pkgs.luanti-client
       pkgs.openttd
-      pkgs.superTuxKart
+      pkgs.supertuxkart
       pkgs.zeroad
     ] ++ dosgames);
   };
