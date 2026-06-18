@@ -14,7 +14,9 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Pick only one of the below networking options.
-  networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.wireless = {
+    enable = true;  # Enables wireless support via wpa_supplicant.
+  };
   # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
   networking.hostName = "thinkpad-x280"; # Define your hostname.
   networking.firewall.enable = false;
@@ -58,8 +60,13 @@
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
-    package = pkgs.callPackage ../../overrides/bluez.nix {};
   };
+
+  # For yubikey browser support
+  services.udev.packages = with pkgs; [
+    yubikey-personalization
+    libu2f-host
+  ];
 
   services.udev.extraRules = ''
     # allow "plugdev" group read/write access to ADI PlutoSDR devices
