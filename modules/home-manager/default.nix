@@ -15,6 +15,7 @@ with lib; {
     ./coding.nix
     ./firefox.nix
     ./games
+    ./manufacturing.nix
     ./media.nix
     ./netsec.nix
     ./personal.nix
