@@ -1,6 +1,6 @@
 let
-  main = "age1yubikey1qfxtwh9rmp8qm0er3hgdwe06jlxexknehag7lrjmv6zx45y80yd3xj20mg0";
-  yubikeys = [ main ];
+  primary = "age1yubikey1qtzf8n8zwhzj7mprlswv4c08q7snma055kwjvg2m35x062dvsc6pq7e55yk";
+  yubikeys = [ primary ];
 
   dan = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILnjvflqEEYV3112bAqMnbXoHDrbPjNXnNveW2a8cdNf dan@dan-nixos-thinkpad-x280";
   users = [ dan ];
@@ -14,4 +14,5 @@ let
 in
 {
   "mmdvm-config.age".publicKeys = yubikeys ++ users ++ systems;
+  "wpa-supplicant.age".publicKeys = yubikeys ++ users ++ [ thinkpad-x280 ai-7600k-gtx1080 ];
 }
